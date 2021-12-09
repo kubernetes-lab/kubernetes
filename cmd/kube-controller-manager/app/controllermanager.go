@@ -678,7 +678,7 @@ func readCA(file string) ([]byte, error) {
 }
 
 // createClientBuilders creates clientBuilder and rootClientBuilder from the given configuration
-func createClientBuilders(c *config.CompletedConfig) (clientBuilder clientbuilder.ControllerClientBuilder, rootClientBuilder clientbuilder.ControllerClientBuilder) {
+func createClientBuilders(c *config.CompletedConfig) (clientBuilder, rootClientBuilder clientbuilder.ControllerClientBuilder) {
 	rootClientBuilder = clientbuilder.SimpleControllerClientBuilder{
 		ClientConfig: c.Kubeconfig,
 	}
